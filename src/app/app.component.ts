@@ -12,10 +12,11 @@ export class AppComponent {
   content: Object;
 
   constructor(private httpClient: HttpClient) {
+    // https://javascript.plainenglish.io/mock-backend-responses-in-angular-320694a515c
   }
 
   get() {
-    this.httpClient.get("http://localhost:3000/api/pandas")
+    this.httpClient.get("http://localhost:3000/pandas")
       .subscribe(
         res => this.content = res,
         httpError => this.error(httpError)
@@ -23,7 +24,7 @@ export class AppComponent {
   }
 
   post() {
-    this.httpClient.post("http://localhost:3000/api/pandas",
+    this.httpClient.post("http://localhost:3000/pandas",
       {
         "name": "test",
         "sex": "F",
@@ -37,7 +38,7 @@ export class AppComponent {
   }
 
   put() {
-    this.httpClient.put("http://localhost:3000/api/pandas/4",
+    this.httpClient.put("http://localhost:3000/pandas/4",
       {
         "name": "YOOOOOO",
         "sex": "F",
@@ -51,7 +52,7 @@ export class AppComponent {
   }
 
   delete() {
-    this.httpClient.delete("http://localhost:3000/api/pandas/4")
+    this.httpClient.delete("http://localhost:3000/pandas/4")
       .subscribe(
         res => this.content = res,
         httpError => this.error(httpError)
@@ -59,7 +60,7 @@ export class AppComponent {
   }
 
   searchByName() {
-    this.httpClient.get("http://localhost:3000/api/pandas?name=Numi")
+    this.httpClient.get("http://localhost:3000/pandas?name=Numi")
       .subscribe(
         res => this.content = res,
         httpError => this.error(httpError)
@@ -67,7 +68,7 @@ export class AppComponent {
   }
 
   proxyGet() {
-    this.httpClient.get("http://localhost:3000/api/pandas")
+    this.httpClient.get("/api/pandas")
       .subscribe(
         res => this.content = res,
         httpError => this.error(httpError)
