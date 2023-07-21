@@ -1,0 +1,48 @@
+{
+  "pandas": [
+    {
+      "id": 1,
+      "name": "Bao",
+      "sex": "F",
+      "birthDate": "09/03/2009",
+      "currentLocation": "Wolong National Nature Reserve"
+    },
+    {
+      "id": 2,
+      "name": "Numi",
+      "sex": "F",
+      "birthDate": "23/06/2015",
+      "currentLocation": "Meme land"
+    },
+    {
+      "id": 3,
+      "name": "Bao Bao",
+      "sex": "M",
+      "birthDate": "30/09/2013",
+      "currentLocation": "Lost to time"
+    },
+    {
+      "id": 4,
+      "name": "Bao",
+      "sex": "F",
+      "birthDate": "09/03/2009",
+      "currentLocation": "Wolong National Nature Reserve"
+    }
+  ],
+  "tanukis": [
+    {
+      "id": 1,
+      "name": "Atago",
+      "sex": "F",
+      "birthDate": "09/03/2009",
+      "currentLocation": "Wolong National Nature Reserve"
+    },
+    {
+      "id": 2,
+      "name": "Bobo",
+      "sex": "M",
+      "birthDate": "23/06/2015",
+      "currentLocation": "Azorof"
+    }
+  ]
+}
