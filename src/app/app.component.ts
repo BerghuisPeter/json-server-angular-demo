@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,10 @@ export class AppComponent {
 
   get() {
     this.httpClient.get("http://localhost:3000/api/pandas")
-      .subscribe(res => this.content = res);
+      .subscribe(
+        res => this.content = res,
+        httpError => this.error(httpError)
+      );
   }
 
   post() {
@@ -27,7 +30,10 @@ export class AppComponent {
         "birthDate": "09/03/2009",
         "currentLocation": "no Where"
       })
-      .subscribe(res => this.content = res);
+      .subscribe(
+        res => this.content = res,
+        httpError => this.error(httpError)
+      );
   }
 
   put() {
@@ -38,22 +44,38 @@ export class AppComponent {
         "birthDate": "09/03/2009",
         "currentLocation": "PUT"
       })
-      .subscribe(res => this.content = res);
+      .subscribe(
+        res => this.content = res,
+        httpError => this.error(httpError)
+      );
   }
 
   delete() {
     this.httpClient.delete("http://localhost:3000/api/pandas/4")
-      .subscribe(res => this.content = res);
+      .subscribe(
+        res => this.content = res,
+        httpError => this.error(httpError)
+      );
   }
 
   searchByName() {
     this.httpClient.get("http://localhost:3000/api/pandas?name=Numi")
-      .subscribe(res => this.content = res);
+      .subscribe(
+        res => this.content = res,
+        httpError => this.error(httpError)
+      );
   }
 
   proxyGet() {
     this.httpClient.get("http://localhost:3000/api/pandas")
-      .subscribe(res => this.content = res);
+      .subscribe(
+        res => this.content = res,
+        httpError => this.error(httpError)
+      );
+  }
+
+  private error(error: HttpErrorResponse) {
+    this.content = 'ErrorCode: ' + error.status;
   }
 
 }
