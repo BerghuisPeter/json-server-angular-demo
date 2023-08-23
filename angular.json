@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mock-backend-responses-in-angular": {
+    "json-server-angular-demo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mock-backend-responses-in-angular",
+            "outputPath": "dist/json-server-angular-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mock-backend-responses-in-angular:build:production"
+              "browserTarget": "json-server-angular-demo:build:production"
             },
             "development": {
-              "browserTarget": "mock-backend-responses-in-angular:build:development"
+              "browserTarget": "json-server-angular-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mock-backend-responses-in-angular:build"
+            "browserTarget": "json-server-angular-demo:build"
           }
         },
         "test": {

@@ -8,8 +8,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 })
 export class AppComponent {
 
-  // @ts-ignore
-  content: Object;
+  content: Object | undefined;
 
   constructor(private httpClient: HttpClient) {
     // https://javascript.plainenglish.io/mock-backend-responses-in-angular-320694a515c
@@ -17,9 +16,10 @@ export class AppComponent {
 
   get() {
     this.httpClient.get("http://localhost:3000/pandas")
-      .subscribe(
-        res => this.content = res,
-        httpError => this.error(httpError)
+      .subscribe({
+          next: res => this.content = res,
+          error: httpError => this.error(httpError)
+        }
       );
   }
 
@@ -31,9 +31,10 @@ export class AppComponent {
         "birthDate": "09/03/2009",
         "currentLocation": "no Where"
       })
-      .subscribe(
-        res => this.content = res,
-        httpError => this.error(httpError)
+      .subscribe({
+          next: res => this.content = res,
+          error: httpError => this.error(httpError)
+        }
       );
   }
 
@@ -45,33 +46,37 @@ export class AppComponent {
         "birthDate": "09/03/2009",
         "currentLocation": "PUT"
       })
-      .subscribe(
-        res => this.content = res,
-        httpError => this.error(httpError)
+      .subscribe({
+          next: res => this.content = res,
+          error: httpError => this.error(httpError)
+        }
       );
   }
 
   delete() {
     this.httpClient.delete("http://localhost:3000/pandas/4")
-      .subscribe(
-        res => this.content = res,
-        httpError => this.error(httpError)
+      .subscribe({
+          next: res => this.content = res,
+          error: httpError => this.error(httpError)
+        }
       );
   }
 
   searchByName() {
     this.httpClient.get("http://localhost:3000/pandas?name=Numi")
-      .subscribe(
-        res => this.content = res,
-        httpError => this.error(httpError)
+      .subscribe({
+          next: res => this.content = res,
+          error: httpError => this.error(httpError)
+        }
       );
   }
 
   proxyGet() {
     this.httpClient.get("/api/pandas")
-      .subscribe(
-        res => this.content = res,
-        httpError => this.error(httpError)
+      .subscribe({
+          next: res => this.content = res,
+          error: httpError => this.error(httpError)
+        }
       );
   }
 
